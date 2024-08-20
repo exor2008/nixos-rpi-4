@@ -58,13 +58,17 @@ in {
   #};
  
   programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   #programs.sway = { 
   #  enable = true;
   #  wrapperFeatures.gtk = true;
   #};
   #services.gnome.gnome-keyring.enable = true;
-  
+
   environment.systemPackages = with pkgs; [ 
     libraspberrypi
     raspberrypi-eeprom
@@ -82,6 +86,7 @@ in {
     grim
     drm_info
     git
+    gitui
   ];
 
   services.openssh.enable = true;
