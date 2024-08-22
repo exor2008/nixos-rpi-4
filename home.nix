@@ -34,8 +34,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-
     htop
+    lf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -76,6 +76,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.kitty.enable = true;
+  programs.nushell.enable = true;
   programs.git = {
     enable = true;
     userEmail = "exorsteam2008@gmail.com";
@@ -85,14 +86,16 @@
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    checkConfig = false;
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
       output = {
         HDMI-A-1 = {
-          mode = "1920x1080@60Hz";
+          mode = "1920x1080@60Hz bg ${config.home.homeDirectory}/wallpapers/native-american-history-wallpaper.png stretch";
 	};
       };
+      workspaceAutoBackAndForth = true;
     };
   };
 

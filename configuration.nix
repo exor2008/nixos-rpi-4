@@ -7,6 +7,8 @@ let
   hostname = "NixOS-RP-PI-4B";
 in {
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   boot = {
     kernelParams = ["snd_bcm2835.enable_hdmi=1"]; # audio
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
@@ -18,7 +20,7 @@ in {
   };
 
   imports = [
-    <home-manager/nixos>
+    # <home-manager/nixos>
     <nixos-hardware/raspberry-pi/4>
     ./hardware-configuration.nix
   ];
@@ -62,7 +64,6 @@ in {
     drm_info
     git
     gitui
-    home-manager
   ];
 
   services.openssh.enable = true;
@@ -74,17 +75,15 @@ in {
       password = "zaq1";
       extraGroups = [ "wheel" "render" "video" ];
     };
- };
+  };
 
-  home-manager.users.me = {pkgs, ...}: {
-    programs.nushell.enable = true;
-    home.stateVersion = "24.05";
-  };
-  
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-  };
+#  home-manager.users.me = {self, pkgs, ...}: {
+#    home.stateVersion = "24.05";
+#  }; 
+#  home-manager = {
+#    useUserPackages = true;
+#    useGlobalPkgs = true;
+#  };
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.11";
