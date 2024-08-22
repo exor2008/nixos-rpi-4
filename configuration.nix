@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 let
-  user = "ian";
   SSID = "Bella1611";
   SSIDpassword = "Miroslava0831";
   interface = "wlan0";
@@ -19,6 +18,7 @@ in {
   };
 
   imports = [
+    <home-manager/nixos>
     <nixos-hardware/raspberry-pi/4>
     ./hardware-configuration.nix
   ];
@@ -29,6 +29,7 @@ in {
     # raspberry-pi."4".audio.enable = true; # this is broken
     deviceTree.enable = true;
     pulseaudio.enable = true;
+    graphics.enable = true;
   };
 
   fileSystems = {
@@ -48,56 +49,41 @@ in {
     };
   };
   
-  # security.rtkit.enable = true;
-  # services.pipewire = {
-  # enable = true;
-  # alsa.enable = true;
-  # alsa.support32Bit = true;
-  # pulse.enable = true;
-  # jack.enable = true;
-  #};
- 
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-
-  #programs.sway = { 
-  #  enable = true;
-  #  wrapperFeatures.gtk = true;
-  #};
-  #services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
 
   environment.systemPackages = with pkgs; [ 
     libraspberrypi
     raspberrypi-eeprom
     neovim 
-    nushell
     mc
     nnn
-    waybar
-    mako
-    swww
-    kitty
-    rofi-wayland
-    chromium
     glxinfo
-    grim
     drm_info
     git
     gitui
+    home-manager
   ];
 
   services.openssh.enable = true;
 
   users = {
     mutableUsers = false;
-    users."${user}" = {
+    users.me = {
       isNormalUser = true;
       password = "zaq1";
       extraGroups = [ "wheel" "render" "video" ];
     };
+ };
+
+  home-manager.users.me = {pkgs, ...}: {
+    programs.nushell.enable = true;
+    home.stateVersion = "24.05";
+  };
+  
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
   };
 
   hardware.enableRedistributableFirmware = true;
