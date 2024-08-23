@@ -30,7 +30,7 @@ in {
     raspberry-pi."4".apply-overlays-dtmerge.enable = true;
     # raspberry-pi."4".audio.enable = true; # this is broken
     deviceTree.enable = true;
-    # pulseaudio.enable = true;
+    # pulseaudio.enable = true; # conflicts with pipewire
     graphics.enable = true;
     enableRedistributableFirmware = true;
   };
@@ -83,21 +83,6 @@ in {
       extraGroups = [ "wheel" "render" "video" ];
     };
   };
-
-#  home-manager.users.me = {self, pkgs, ...}: {
-#    home.stateVersion = "24.05";
-#  }; 
-#  home-manager = {
-#    useUserPackages = true;
-#    useGlobalPkgs = true;
-#  };
-
-#  services.gnome.gnome-keyring.enable = true;
-
-#  programs.sway = {
-#    enable = true;
-#    wrapperFeatures.gtk = true;
-#  };
 
   system.stateVersion = "24.11";
 }
