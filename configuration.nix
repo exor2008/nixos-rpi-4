@@ -30,8 +30,9 @@ in {
     raspberry-pi."4".apply-overlays-dtmerge.enable = true;
     # raspberry-pi."4".audio.enable = true; # this is broken
     deviceTree.enable = true;
-    pulseaudio.enable = true;
+    # pulseaudio.enable = true;
     graphics.enable = true;
+    enableRedistributableFirmware = true;
   };
 
   fileSystems = {
@@ -67,6 +68,12 @@ in {
   ];
 
   services.openssh.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   users = {
     mutableUsers = false;
@@ -85,6 +92,12 @@ in {
 #    useGlobalPkgs = true;
 #  };
 
-  hardware.enableRedistributableFirmware = true;
+#  services.gnome.gnome-keyring.enable = true;
+
+#  programs.sway = {
+#    enable = true;
+#    wrapperFeatures.gtk = true;
+#  };
+
   system.stateVersion = "24.11";
 }
