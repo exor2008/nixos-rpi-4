@@ -10,6 +10,7 @@
    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     waybar
     wofi
+    nemo
     htop
     lf
   ];
@@ -24,7 +25,14 @@
 
   programs.home-manager.enable = true;
   programs.kitty.enable = true;
-  programs.nushell.enable = true;
+  programs.nushell = {
+    enable = true;
+    loginFile.text = ''
+      if (tty) == "/dev/tty1" {
+        sway
+      }
+      '';
+  };
   programs.git = {
     enable = true;
     userEmail = "exorsteam2008@gmail.com";

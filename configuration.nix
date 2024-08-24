@@ -65,6 +65,7 @@ in {
     drm_info
     git
     gitui
+    neofetch
   ];
 
   services.openssh.enable = true;
@@ -79,6 +80,7 @@ in {
     mutableUsers = false;
     users.me = {
       isNormalUser = true;
+      shell = pkgs.nushell;
       password = "zaq1";
       extraGroups = [ "wheel" "render" "video" ];
     };
