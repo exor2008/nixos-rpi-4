@@ -23,12 +23,32 @@
     # EDITOR = "emacs";
   };
 
-  programs.home-manager.enable = true;
-  programs.kitty.enable = true;
-  programs.git = {
+  programs = {
+    home-manager.enable = true;
+    kitty.enable = true;
+    git = {
+      enable = true;
+      userEmail = "exorsteam2008@gmail.com";
+      userName = "exor2008";
+    };
+    swaylock = {
+      enable = true;
+      settings = {
+        image = "${config.home.homeDirectory}/wallpapers/lock.png";
+        show-keyboard-layout = true;
+        indicator-caps-lock = true;
+      };
+    };
+  };
+
+  services.swayidle = {
     enable = true;
-    userEmail = "exorsteam2008@gmail.com";
-    userName = "exor2008";
+    timeouts = [
+      {
+        timeout = 60 * 15; # 15 min
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
+      }
+    ];
   };
 
   wayland.windowManager.sway = {

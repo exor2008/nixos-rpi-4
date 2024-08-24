@@ -53,7 +53,10 @@ in {
   };
   
 
-  security.polkit.enable = true;
+  security = {
+    polkit.enable = true;
+    pam.services.swaylock = {};
+  };
 
   environment.systemPackages = with pkgs; [ 
     libraspberrypi
