@@ -8,10 +8,9 @@
 
   home.packages = with pkgs; [
    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    waybar
     wofi
     nemo
-    htop
+    htop   
     lf
   ];
 
@@ -37,6 +36,24 @@
         image = "${config.home.homeDirectory}/wallpapers/lock.png";
         show-keyboard-layout = true;
         indicator-caps-lock = true;
+      };
+    };
+    waybar = {
+      enable = true;
+      settings = {
+        mainBar = {
+          layer = "top";
+          position = "bottom";
+          height = 30;
+          modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
+          modules-center = [ "sway/window" ];
+          modules-right = [ "mpd" "temperature" ];
+
+          "sway/workspaces" = {
+            disable-scroll = true;
+            all-outputs = true;
+          };
+        };
       };
     };
   };
@@ -65,15 +82,36 @@
 	};
       };
       workspaceAutoBackAndForth = true;
-      gaps.smartGaps = true;
-      gaps.smartBorders = "on";
+      gaps = {
+        smartGaps = true;
+        smartBorders = "on";
+	inner = 10;
+      };
       bars = [
         { 
-	  command = "${pkgs.waybar}/bin/waybar"; 
-	  position = "bottom";
-	}
+          command = "${pkgs.waybar}/bin/waybar"; 
+        }
       ];
       menu = "${pkgs.wofi}/bin/wofi --show drun";
+      window = {
+	border = 3;
+	# titlebar = false;
+        commands = [
+          {
+            command = "opacity 0.9, border pixel 3";
+            criteria = {
+              class = ".*";
+            };
+          }
+	  {
+            command = "opacity 0.9, border pixel 3";
+            criteria = {
+              app_id = ".*";
+            };
+          }
+
+	];
+      };
     };
   };
 
