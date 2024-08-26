@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
-
+let
+   nixvim = import <nixvim>;
+in
 {
   home.username = "me";
   home.homeDirectory = "/home/me";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  imports = [ nixvim.homeManagerModules.nixvim ];
 
   home.packages = with pkgs; [
    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
@@ -24,7 +28,10 @@
 
   programs = {
     home-manager.enable = true;
-    kitty.enable = true;
+    kitty = {
+      enable = true;
+      theme = "Spacedust";
+    };
     git = {
       enable = true;
       userEmail = "exorsteam2008@gmail.com";
@@ -55,6 +62,28 @@
           };
         };
       };
+    };
+    nixvim = {
+      enable = true;
+      colorschemes.nightfox = {
+        enable = true;
+	flavor = "terafox";
+      };
+      plugins = {
+        telescope.enable = true;
+	lightline.enable = true;
+      };
+      opts = {
+        number = true;
+        relativenumber = true;
+      };
+      globals.mapleader = " ";
+      keymaps = [
+        {
+	  action = "<cmd>Telescope live_grep<CR>";
+	  key = "<leader>g";
+	}
+      ];
     };
   };
 
