@@ -5,18 +5,20 @@ let
   SSIDpassword = "Miroslava0831";
   interface = "wlan0";
   hostname = "NixOS-RP-PI-4B";
-in {
+in
+{
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # nixpkgs.config.allowUnfree = true;
 
   boot = {
-    kernelParams = ["snd_bcm2835.enable_hdmi=1"]; # audio
+    kernelParams = [ "snd_bcm2835.enable_hdmi=1" ]; # audio
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
     loader = {
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
-   };
+    };
   };
 
   imports = [
@@ -25,7 +27,7 @@ in {
     ./hardware-configuration.nix
   ];
 
-  hardware = { 
+  hardware = {
     raspberry-pi."4".fkms-3d.enable = true;
     raspberry-pi."4".apply-overlays-dtmerge.enable = true;
     # raspberry-pi."4".audio.enable = true; # this is broken
@@ -51,14 +53,14 @@ in {
       interfaces = [ interface ];
     };
   };
-  
+
 
   security = {
     polkit.enable = true;
-    pam.services.swaylock = {};
+    pam.services.swaylock = { };
   };
 
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
     mc
@@ -69,6 +71,7 @@ in {
     gitui
     neofetch
   ];
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.openssh.enable = true;
   services.pipewire = {
@@ -85,15 +88,15 @@ in {
         user = "greeter";
       };
     };
-   };
-   systemd.services.greetd = {
-     unitConfig = {
-        After = lib.mkOverride 0 [ "multi-user.target" ];
-     };
-     serviceConfig = {
-       Type = "idle";
-     };
-   };
+  };
+  systemd.services.greetd = {
+    unitConfig = {
+      After = lib.mkOverride 0 [ "multi-user.target" ];
+    };
+    serviceConfig = {
+      Type = "idle";
+    };
+  };
 
 
   users = {
@@ -103,6 +106,9 @@ in {
       shell = pkgs.nushell;
       password = "zaq1";
       extraGroups = [ "wheel" "render" "video" ];
+    };
+    groups.admins = {
+      members = [ "root" "me" ];
     };
   };
 

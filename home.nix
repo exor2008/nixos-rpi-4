@@ -1,8 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
-   nixvim = import <nixvim>;
+  nixvim = import <nixvim>;
 in
 {
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+    ];
+
   home.username = "me";
   home.homeDirectory = "/home/me";
 
@@ -11,11 +16,12 @@ in
   imports = [ nixvim.homeManagerModules.nixvim ];
 
   home.packages = with pkgs; [
-   # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     wofi
     nemo
-    htop   
+    htop
     lf
+    nixpkgs-fmt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,11 +73,11 @@ in
       enable = true;
       colorschemes.nightfox = {
         enable = true;
-	flavor = "terafox";
+        flavor = "terafox";
       };
       plugins = {
         telescope.enable = true;
-	lightline.enable = true;
+        lightline.enable = true;
       };
       opts = {
         number = true;
@@ -80,10 +86,13 @@ in
       globals.mapleader = " ";
       keymaps = [
         {
-	  action = "<cmd>Telescope live_grep<CR>";
-	  key = "<leader>g";
-	}
+          action = "<cmd>Telescope live_grep<CR>";
+          key = "<leader>g";
+        }
       ];
+    };
+    vscode = {
+      enable = true;
     };
   };
 
@@ -108,23 +117,23 @@ in
       output = {
         HDMI-A-1 = {
           mode = "1920x1080@60Hz bg ${config.home.homeDirectory}/wallpapers/native-american-history-wallpaper.png stretch";
-	};
+        };
       };
       workspaceAutoBackAndForth = true;
       gaps = {
         smartGaps = true;
         smartBorders = "on";
-	inner = 10;
+        inner = 10;
       };
       bars = [
-        { 
-          command = "${pkgs.waybar}/bin/waybar"; 
+        {
+          command = "${pkgs.waybar}/bin/waybar";
         }
       ];
       menu = "${pkgs.wofi}/bin/wofi --show drun";
       window = {
-	border = 3;
-	# titlebar = false;
+        border = 3;
+        # titlebar = false;
         commands = [
           {
             command = "opacity 0.9, border pixel 3";
@@ -132,14 +141,14 @@ in
               class = ".*";
             };
           }
-	  {
+          {
             command = "opacity 0.9, border pixel 3";
             criteria = {
               app_id = ".*";
             };
           }
 
-	];
+        ];
       };
     };
   };
