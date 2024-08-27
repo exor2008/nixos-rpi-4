@@ -22,6 +22,10 @@ in
     htop
     lf
     nixpkgs-fmt
+    rustup
+    gcc
+    dust
+    ripgrep
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
