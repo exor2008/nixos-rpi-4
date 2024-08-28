@@ -28,6 +28,7 @@ in
     gcc
     dust
     ripgrep
+    cbonsai
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -40,6 +41,14 @@ in
 
   programs = {
     home-manager.enable = true;
+    nushell = {
+      enable = true;
+      shellAliases = {
+        bonsai = ''cbonsai -il -b 2 -c "o-o,O-o,o-O"'';
+        matrix = "~/.cargo/bin/rusty-rain -s -C 255,131,73";
+	nnn = "nnn -H";
+      };
+    };
     kitty = {
       enable = true;
       theme = "Spacedust";
@@ -184,7 +193,6 @@ in
               app_id = ".*";
             };
           }
-
         ];
       };
     };
