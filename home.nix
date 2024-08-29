@@ -29,7 +29,18 @@ in
     dust
     ripgrep
     cbonsai
+    kanagawa-icon-theme
   ];
+
+  #fonts.fontconfig = {
+  # enable = true;
+  #defaultFonts = {
+  #  monospace = [ "JetBrainsMono" ];
+  #  sansSerif = [ "JetBrainsMono" ];
+  #   serif = [ "JetBrainsMono" ];
+
+  #  };
+  #};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -46,12 +57,18 @@ in
       shellAliases = {
         bonsai = ''cbonsai -il -b 2 -c "o-o,O-o,o-O"'';
         matrix = "~/.cargo/bin/rusty-rain -s -C 255,131,73";
-	nnn = "nnn -H";
+        nnn = "nnn -H";
       };
     };
     kitty = {
       enable = true;
+      font = {
+        name = "JetBrainsMono Nerd Font";
+      };
       theme = "Spacedust";
+      extraConfig = ''
+        background #152528
+      '';
     };
     git = {
       enable = true;
@@ -71,15 +88,61 @@ in
       settings = {
         mainBar = {
           layer = "top";
-          position = "bottom";
+          position = "top";
           height = 30;
           modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
           modules-center = [ "sway/window" ];
-          modules-right = [ "mpd" "temperature" ];
-
+          modules-right = [ "cpu" "load" "memory" "network" "disk" "temperature" "keyboard-state" "tray" "clock" ];
           "sway/workspaces" = {
             disable-scroll = true;
             all-outputs = true;
+            on-click = "activate";
+          };
+          "sway/window" = {
+            window-rewrite = {
+              "class<kitty>" = "";
+            };
+          };
+          "wlr/taskbar" = {
+            #icon-theme = "Dracula";
+            icon-theme = "Kanagawa";
+            icon-size = 20;
+          };
+          "sway/mode" = {
+            format = "<span style=\"italic\">{}</span>";
+          };
+          "cpu" = {
+            format = "{usage}% ";
+          };
+          "memory" = {
+            format = "{}% ";
+          };
+          "tray" = {
+            spacing = 8;
+          };
+          "clock" = {
+            interval = 60;
+            tooltip = false;
+            format = "{:%R | %a, %d/%m/%y}";
+          };
+          "temperature" = {
+            critical-threshold = 80;
+            format = "{temperatureC}°C {icon}";
+            format-icons = [
+              ""
+              ""
+              ""
+              ""
+            ];
+          };
+          "network" = {
+            # "interface" = "wlp2*"; # (Optional) To force the use of this interface
+            format-wifi = "{signalStrength}% ";
+            format-ethernet = "{ipaddr}/{cidr} ";
+            tooltip-format = "{ifname} via {gwaddr} ";
+            format-linked = "{ifname} (No IP) ";
+            format-disconnected = "Disconnected ";
+            format-alt = "{ifname} = {ipaddr}/{cidr} ";
           };
         };
       };
@@ -129,6 +192,11 @@ in
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
+      fonts = {
+        names = [
+          "JetBrainsMono Nerd Font"
+        ];
+      };
       output = {
         HDMI-A-1 = {
           mode = "1920x1080@60Hz bg ${config.home.homeDirectory}/wallpapers/native-american-history-wallpaper.png stretch";
@@ -143,6 +211,7 @@ in
       bars = [
         {
           command = "${pkgs.waybar}/bin/waybar";
+          fonts.names = [ "JetBrainsMono Nerd Font" ];
         }
       ];
       menu = "${pkgs.wofi}/bin/wofi --show drun";
@@ -182,13 +251,13 @@ in
         # titlebar = false;
         commands = [
           {
-            command = "opacity 0.9, border pixel 3";
+            command = "opacity 0.95, border pixel 3";
             criteria = {
               class = ".*";
             };
           }
           {
-            command = "opacity 0.9, border pixel 3";
+            command = "opacity 0.95, border pixel 3";
             criteria = {
               app_id = ".*";
             };

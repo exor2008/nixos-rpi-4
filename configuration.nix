@@ -7,7 +7,6 @@ let
   hostname = "NixOS-RP-PI-4B";
 in
 {
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # nixpkgs.config.allowUnfree = true;
 
@@ -70,6 +69,7 @@ in
     git
     gitui
     neofetch
+    # automatic-timezoned
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -89,6 +89,8 @@ in
       };
     };
   };
+  services.automatic-timezoned.enable = true;
+  time.timeZone = "US/Eastern";
   systemd.services.greetd = {
     unitConfig = {
       After = lib.mkOverride 0 [ "multi-user.target" ];
@@ -97,7 +99,6 @@ in
       Type = "idle";
     };
   };
-
 
   users = {
     mutableUsers = false;
@@ -111,6 +112,12 @@ in
       members = [ "root" "me" ];
     };
   };
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
+  ];
 
   system.stateVersion = "24.11";
 }
