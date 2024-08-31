@@ -4,7 +4,7 @@ let
   SSID = "Bella1611";
   SSIDpassword = "Miroslava0831";
   interface = "wlan0";
-  hostname = "NixOS-RP-PI-4B";
+  hostname = "NixOS-RPI4";
 in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -52,7 +52,6 @@ in
       interfaces = [ interface ];
     };
   };
-
 
   security = {
     polkit.enable = true;
