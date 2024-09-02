@@ -2,7 +2,7 @@
   description = "RPI 4 NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +25,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.me = import ./home.nix;
+          home-manager.users.me = import ./home;
         }
       ];
     };
