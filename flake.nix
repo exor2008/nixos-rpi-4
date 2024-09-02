@@ -10,7 +10,7 @@
     raspberry-pi-nix = {
       url = "github:nix-community/raspberry-pi-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
   outputs = { nixpkgs, home-manager, raspberry-pi-nix, ... }: {
