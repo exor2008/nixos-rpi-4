@@ -8,6 +8,9 @@ let
 in
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = ["root" "me"];
+
+  imports = [ ./cachix.nix ];
 
   fileSystems = {
     "/" = {
