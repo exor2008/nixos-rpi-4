@@ -10,7 +10,7 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.trusted-users = ["root" "me"];
 
-  imports = [ ./cachix.nix ];
+  imports = [ ./cachix.nix ./hardware-configuration.nix ];
 
   fileSystems = {
     "/" = {
