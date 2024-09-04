@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build NixOS (include kernel)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  aarch64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo apt-get install -y qemu-user-static
+      - uses: cachix/install-nix-action@v21
+        with:
+          extra_nix_config: |
+            system = aarch64-linux
+      - name: Build
+        run: nix build .#nixosConfigurations.nixos-rpi4.config.system.build.sdImage
+
+      - name: Upload SD Image
+        uses: actions/upload-artifact@v3
+        with:
+          name: nixos-sd-image
+          path: ./result/sd-image/*.img
