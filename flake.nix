@@ -1,53 +1,36 @@
 {
   description = "raspberry-pi-nix example";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, raspberry-pi-nix }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager }:
     let
       inherit (nixpkgs.lib) nixosSystem;
-      basic-config = { pkgs, lib, ... }: {
-        # bcm2711 for rpi 3, 3+, 4, zero 2 w
-        # bcm2712 for rpi 5
-        # See the docs at:
-        # https://www.raspberrypi.com/documentation/computers/linux_kernel.html#native-build-configuration
-        raspberry-pi-nix.board = "bcm2711";
-        time.timeZone = "America/New_York";
-        users.users.root.initialPassword = "root";
-        networking = {
-          hostName = "nixos-rpi4";
-          useDHCP = false;
-          interfaces = {
-            wlan0.useDHCP = true;
-            eth0.useDHCP = true;
-          };
-        };
-        hardware = {
-          bluetooth.enable = true;
-          raspberry-pi = {
-            config = {
-              all = {
-                base-dt-params = {
-                  # enable autoprobing of bluetooth driver
-                  # https://github.com/raspberrypi/linux/blob/c8c99191e1419062ac8b668956d19e788865912a/arch/arm/boot/dts/overlays/README#L222-L224
-                  krnbt = {
-                    enable = true;
-                    value = "on";
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-
     in {
       nixosConfigurations = {
         nixos-rpi4 = nixosSystem {
           system = "aarch64-linux";
-          modules = [ raspberry-pi-nix.nixosModules.raspberry-pi basic-config ./cachix.nix ];
+          modules = [ 
+            ./cachix.nix
+  
+            ./configuration.nix
+  
+            nixos-hardware.nixosModules.raspberry-pi-4
+  
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.ian = import ./home;
+            }
+          ];
         };
       };
     };
