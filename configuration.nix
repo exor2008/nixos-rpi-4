@@ -8,7 +8,7 @@
   imports = [ 
     ./cachix.nix
     ./hardware-configuration.nix
-    ./system.nix  
+    ./system
   ];
 
   system.stateVersion = "24.11";
