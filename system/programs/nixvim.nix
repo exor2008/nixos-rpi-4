@@ -2,16 +2,11 @@
 
 let
   nvim = inputs.nixvim.packages.${pkgs.system}.default;
-  # nvim.config.colorschemes = 
-in {
-  nvim = {
+  nvim.config.colorschemes.nightfox = {
     enable = true;
-    colorschemes.nightfox = {
-      enable = true;
-      flavor = "terafox";
-    };
+    flavor = "terafox";
   };
-
+in {
   environment.systemPackages = [
     nvim
   ];
