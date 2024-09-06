@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager }:
     let
       inherit (nixpkgs.lib) nixosSystem;
     in {
