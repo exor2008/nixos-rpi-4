@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  nvim = inputs.nixvim.packages."x86_64-linux".default;
+  nvim = inputs.nixvim.packages.${pkgs.system}.default;
   # nvim.config.colorschemes = 
 in {
   nvim = {

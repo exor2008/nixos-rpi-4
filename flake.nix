@@ -17,12 +17,12 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager, nixvim }:
     let
       inherit (nixpkgs.lib) nixosSystem;
     in {
       nixosConfigurations = {
-        nixos-rpi4 = nixosSystem {
+        NixOS-RPI4 = nixosSystem {
           system = "aarch64-linux";
           specialArgs = { inherit inputs; };
           modules = [ 
