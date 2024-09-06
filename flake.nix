@@ -3,9 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    nixvim = {
+      url = "github:redyf/Neve";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -28,7 +35,6 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-
               home-manager.users.ian = import ./home;
             }
           ];
