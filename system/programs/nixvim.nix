@@ -1,19 +1,53 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  inputs.nixvim.packages.${pkgs.system}.default.override {
+  config = {
     colorschemes = {
+      catppuccin.enable = lib.mkForce false;
       nightfox = {
         enable = true;
         flavor = "terafox";
+        settings = {
+          disable_bold = false;
+          disable_italic = false;
+          disable_underline = false;
+          transparent_background = true;
+          term_colors = true;
+          integrations = {
+            cmp = true;
+            noice = true;
+            notify = true;
+            neotree = true;
+            harpoon = true;
+            gitsigns = true;
+            which_key = true;
+            illuminate = {
+              enabled = true;
+            };
+            treesitter = true;
+            treesitter_context = true;
+            telescope.enabled = true;
+            indent_blankline.enabled = true;
+            mini.enabled = true;
+            native_lsp = {
+              enabled = true;
+              inlay_hints = {
+                background = true;
+              };
+              underlines = {
+                errors = ["underline"];
+                hints = ["underline"];
+                information = ["underline"];
+                warnings = ["underline"];
+              };
+            };
+          };
+        };
       };
-    };
+    };   
   };
-
-  nvim = inputs.nixvim.packages.${pkgs.system}.default;
+  nvim = inputs.nixvim.packages.${pkgs.system}.default.extend { config = config; };
 in {
-
-
   environment.systemPackages = [
     nvim
   ];
