@@ -2,6 +2,8 @@
 
 let
   nvim = inputs.nixvim.packages.${pkgs.system}.default;
+  
+in {
   nvim.override {
     colorschemes = {
       nightfox = {
@@ -9,8 +11,8 @@ let
         flavor = "terafox";
       };
     };
-  }
-in {
+  };
+
   environment.systemPackages = [
     nvim
   ];
