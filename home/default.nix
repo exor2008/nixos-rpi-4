@@ -5,6 +5,8 @@
     ./nushell.nix
     ./home-manager.nix
     ./git.nix
+    ./kitty.nix
+    ./xdg.nix
     ./sway
   ];
 
