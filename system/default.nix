@@ -8,6 +8,8 @@
     ./rpi-hardware.nix
     ./timezone.nix
     ./users.nix
+    ./variables.nix
     ./programs
+    ./font
   ];
 }

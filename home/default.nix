@@ -1,8 +1,11 @@
 {pkgs, ...}:
 
 {
-    home.packages = with pkgs; [ nushell ];
-    programs.home-manager.enable = true;
+   imports = [ 
+    ./nushell.nix
+    ./home-manager.nix
+    ./sway
+  ];
 
-    home.stateVersion = "24.05";
+  home.stateVersion = "24.05";
 }
