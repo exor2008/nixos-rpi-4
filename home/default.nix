@@ -4,6 +4,7 @@
    imports = [ 
     ./nushell.nix
     ./home-manager.nix
+    ./git.nix
     ./sway
   ];
 
