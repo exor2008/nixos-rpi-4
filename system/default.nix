@@ -9,7 +9,7 @@
     ./timezone.nix
     ./users.nix
     ./variables.nix
+    ./font.nix
     ./programs
-    ./font
   ];
 }
