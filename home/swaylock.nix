@@ -9,12 +9,14 @@ let
   }; 
 in 
 {
-  swaylock = {
-    enable = true;
-    settings = {
-      image = "${wallpaper}/lock.png";
-      show-keyboard-layout = true;
-      indicator-caps-lock = true;
+  programs = {
+    swaylock = {
+      enable = true;
+      settings = {
+        image = "${wallpaper}/lock.png";
+        show-keyboard-layout = true;
+        indicator-caps-lock = true;
+      };
     };
   };
 }
