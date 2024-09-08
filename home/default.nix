@@ -7,6 +7,8 @@
     ./git.nix
     ./kitty.nix
     ./xdg.nix
+    ./swayidle.nix
+    ./swaylock.nix
     ./sway
   ];
 
