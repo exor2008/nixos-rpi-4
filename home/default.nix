@@ -9,6 +9,7 @@
     ./xdg.nix
     ./swayidle.nix
     ./swaylock.nix
+    ./icons.nix
     ./sway
   ];
 

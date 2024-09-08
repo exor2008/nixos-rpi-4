@@ -17,5 +17,10 @@
   imports = [ 
     ./output.nix
     ./font.nix
+    ./bars.nix
+    ./gaps.nix
+    ./menu.nix
+    ./colors.nix
+    ./window.nix
   ];
 }
