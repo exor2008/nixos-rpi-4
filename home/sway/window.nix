@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 {
   wayland.windowManager.sway = {
@@ -8,13 +8,13 @@
         titlebar = false;
         commands = [
           {
-            command = "opacity 0.9, border pixel 3";
+            command = "opacity 0.95, border pixel 3";
             criteria = {
               class = ".*";
             };
           }
           {
-            command = "opacity 0.9, border pixel 3";
+            command = "opacity 0.95, border pixel 3";
             criteria = {
               app_id = ".*";
             };
