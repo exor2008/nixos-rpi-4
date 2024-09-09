@@ -10,7 +10,7 @@
     ./lf.nix
     ./mc.nix
     ./nnn.nix
-    ./htop.nix
     ./pipewire.nix
+    ./misc.nix
   ];
 }
