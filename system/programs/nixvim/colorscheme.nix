@@ -1,6 +1,6 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 
-let
+{
   config = {
     colorschemes = {
       catppuccin.enable = lib.mkForce false;
@@ -45,10 +45,5 @@ let
         };
       };
     };   
-  };
-  nvim = inputs.nixvim.packages.${pkgs.system}.default.extend { config = config; };
-in {
-  environment.systemPackages = [
-    nvim
-  ];
+  }; 
 }

@@ -1,8 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
  imports = [ 
-    ./nixvim.nix
+    ./nixvim
     ./polkit.nix
     ./git.nix
     ./neofetch.nix
