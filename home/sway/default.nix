@@ -14,6 +14,8 @@
     };
     extraConfig = ''
       corner_radius 6
+      shadows enable
+      default_dim_inactive 0.4
     '';
   };
 
