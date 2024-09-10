@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ...  }:
 
 {
   programs = {
@@ -11,9 +11,16 @@
       
       theme = "Spacedust";
       
-      extraConfig = ''
-        background #152528
-      '';
+      settings = {
+        copy_on_select = "clipboard";
+        background = "#152528";
+      };
+
+      keybindings = {
+        "cmd+c" = "copy_to_clipboard";
+        "cmd+v" = "paste_from_clipboard";
+        "shift+cmd+v" = "paste_from_buffer clipboard";
+      };
     };
   };
 }
