@@ -4,8 +4,8 @@ let
   wallpaper = pkgs.fetchFromGitHub {
     owner = "exor2008";
     repo = "stardog";
-    rev = "d8de1af527100b9962e64a77d6eef8f31b19931c";
-    hash = "sha256-mU8SinH+TXJYsxdBrqQY6/Wrf6gjB9oQthVcnpiNx/8=";
+    rev = "d87fdf10644c2f575910f238c9ce657c53bcd051";
+    hash = "sha256-nW9VagxLZhlQDTO/hikvLl6uby9O/7GefxDikrVV3E8=";
   }; 
 in 
 {

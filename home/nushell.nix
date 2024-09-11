@@ -15,10 +15,6 @@
         $env.config = {
           show_banner: false
         }'';
-
-      extraLogin = ''
-        echo "Ololo"
-      '';
     };
   };
 }
