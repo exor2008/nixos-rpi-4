@@ -1,4 +1,4 @@
-{ ...  }:
+{ pkgs, ...  }:
 
 let 
   wallpaper = pkgs.fetchFromGitHub {
