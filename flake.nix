@@ -24,7 +24,7 @@
       nixosConfigurations = {
         NixOS-RPI4 = nixosSystem {
           system = "aarch64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit self inputs; };
           modules = [ 
             ./cachix.nix
   
