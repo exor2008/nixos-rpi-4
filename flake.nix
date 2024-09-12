@@ -36,6 +36,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.ian = import ./home;
+              home-manager.extraSpecialArgs = {
+                inherit self;
+              };
             }
           ];
         };

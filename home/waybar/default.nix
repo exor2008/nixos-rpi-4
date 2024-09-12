@@ -1,10 +1,10 @@
-{ self, pkgs, ... }:
+{ self, lib, ... }:
 
 {
   programs = {
     waybar = {
       enable = true;
-      style = mkAfter ''
+      style = lib.mkAfter ''
         ${builtins.readFile "${self}/home/waybar/style.css"}
       '';
       settings = {
@@ -81,7 +81,7 @@
               phone = "";
               portable = "";
               car = "";
-              default = ["", "", ""];
+              default = ["" "" ""];
             };
             on-click = "pavucontrol";
           };
@@ -113,7 +113,7 @@
             format = "{name} {icon}";
             format-icons = {
               locked = "";
-              unlocked = ""
+              unlocked = "";
             };
           };
 
@@ -128,7 +128,7 @@
             format = "⏻ ";
             tooltip = false;
             menu = "on-click";
-            menu-file = ${builtins.readFile "${self}/home/waybar/power_menu.xml"}
+            menu-file = ''${builtins.readFile "${self}/home/waybar/power_menu.xml"}'';
             menu-actions = {
               shutdown = "shutdown";
               reboot = "reboot";
