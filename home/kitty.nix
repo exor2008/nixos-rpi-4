@@ -23,6 +23,7 @@ in
         copy_on_select = "clipboard";
         background = "#152528";
         window_logo_path = "${wallpaper}/window-logo.png";
+        window_logo_alpha = "0.4";
       };
 
       keybindings = {
