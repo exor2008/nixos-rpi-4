@@ -63,7 +63,7 @@
           };
 
           "disk" = {
-            format = "{}% 💽";
+            format = "{}% ";
           };
 
           "pulseaudio" = {
