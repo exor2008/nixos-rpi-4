@@ -1,13 +1,5 @@
-{ pkgs, ...  }:
+{ wallpapers, ...  }:
 
-let 
-  wallpaper = pkgs.fetchFromGitHub {
-    owner = "exor2008";
-    repo = "stardog";
-    rev = "aaadabd57aaa29266db1fe19432441f1df989641";
-    hash = "sha256-4rCHN2PIjpX9OoVKtfJNrzL7GDk42K226KvJ9oDh5Wg=";
-  }; 
-in 
 {
   programs = {
     kitty = {
@@ -22,7 +14,7 @@ in
       settings = {
         copy_on_select = "clipboard";
         background = "#152528";
-        window_logo_path = "${wallpaper}/window-logo.png";
+        window_logo_path = "${wallpapers}/window-logo.png";
         window_logo_alpha = "0.4";
       };
 

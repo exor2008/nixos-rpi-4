@@ -338,7 +338,8 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "wallpapers": "wallpapers"
       }
     },
     "systems": {
@@ -390,6 +391,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726089221,
+        "narHash": "sha256-4rCHN2PIjpX9OoVKtfJNrzL7GDk42K226KvJ9oDh5Wg=",
+        "owner": "exor2008",
+        "repo": "stardog",
+        "rev": "aaadabd57aaa29266db1fe19432441f1df989641",
+        "type": "github"
+      },
+      "original": {
+        "owner": "exor2008",
+        "repo": "stardog",
         "type": "github"
       }
     }
