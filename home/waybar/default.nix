@@ -11,21 +11,25 @@
         mainBar = {
           layer = "top";
           position = "top";
-          height = 30;
           modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
           modules-center = [ "sway/window" ];
           modules-right = [ 
             "tray"
+            "custom/round-left-end"
             "cpu"
+            "custom/round-left"
             "memory"
+            "custom/round-left"
             "disk"
+            "custom/round-left"
             "pulseaudio"
+            "custom/round-left"
             "network"
+            "custom/round-left"
             "temperature"
-            "keyboard-state"
-            "sway/language"
             "custom/round-left"
             "clock"
+            "custom/round-left"
             "custom/power"
           ];
           
@@ -64,7 +68,7 @@
           };
 
           "disk" = {
-            format = "{}% ";
+            format = "{used} ";
           };
 
           "pulseaudio" = {
@@ -108,16 +112,6 @@
             ];
           };
 
-          "keyboard-state" = {
-            numlock = true;
-            capslock = true;
-            format = "{name} {icon}";
-            format-icons = {
-              locked = "";
-              unlocked = "";
-            };
-          };
-
           "clock" = {
             interval = 60;
             format = "{:%R | %a, %d/%m/%y}";
@@ -139,11 +133,16 @@
           };
 
           "custom/round-left" = {
-            "format": " ",
-            "tooltip": false
-          },
+            format = "";
+            tooltip = false;
+          };
 
-        };
+          "custom/round-left-end" = {
+            format = "";
+            tooltip = false;
+          };
+# 
+       };
       };
     };
   };
