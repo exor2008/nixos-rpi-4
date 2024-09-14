@@ -1,4 +1,4 @@
-{ self, lib, ... }:
+{ self, pkgs, lib, ... }:
 
 {
   programs = {
@@ -11,7 +11,14 @@
         mainBar = {
           layer = "top";
           position = "top";
-          modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
+          fixed-center = false;
+          modules-left = [
+            "custom/nix-logo"
+            "sway/workspaces"
+            "sway/mode"
+            "custom/round-right-end"
+            "wlr/taskbar"
+          ];
           modules-center = [ "sway/window" ];
           modules-right = [ 
             "tray"
@@ -37,6 +44,7 @@
             disable-scroll = true;
             all-outputs = true;
             on-click = "activate";
+            on-click-middle = "close";
           };
           
           "sway/mode" = {
@@ -44,9 +52,10 @@
           };
 
           "wlr/taskbar" = {
-            #icon-theme = "Dracula";
             icon-theme = "Kanagawa";
             icon-size = 20;
+            on-click = "activate";
+            on-click-middle = "close";
           };
 
           "sway/window" = {
@@ -64,7 +73,7 @@
           };
 
           "memory" = {
-            format = "{}% ";
+            format = "{}% ";
           };
 
           "disk" = {
@@ -122,14 +131,7 @@
           "custom/power" = {
             format = "⏻ ";
             tooltip = false;
-            menu = "on-click";
-            menu-file = ''${builtins.readFile "${self}/home/waybar/power_menu.xml"}'';
-            menu-actions = {
-              shutdown = "shutdown";
-              reboot = "reboot";
-              suspend = "systemctl suspend";
-              hibernate = "systemctl hibernate";
-            };
+            on-click = "wlogout";
           };
 
           "custom/round-left" = {
@@ -141,8 +143,17 @@
             format = "";
             tooltip = false;
           };
-# 
-       };
+
+          "custom/round-right-end" = {
+            format = "";
+            tooltip = false;
+          };
+
+          "custom/nix-logo" = {
+            format = "";
+            tooltip = false;
+          };
+        };
       };
     };
   };

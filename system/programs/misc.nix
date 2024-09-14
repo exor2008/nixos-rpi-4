@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,5 +6,6 @@
     ripgrep
     dust
     wl-clipboard
+    wlogout
   ];
 }

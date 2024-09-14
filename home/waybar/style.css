@@ -12,7 +12,19 @@
 window#waybar {
   background: rgba(0, 0, 0, 0);
   font-family: JetBrainsMono Nerd Font;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+window#waybar #window {
+  color: #007382;
+  background-color: #FFFCF9;
+  border-radius: 50%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+window#waybar.empty #window {
+  background: transparent;
 }
 
 label.module {
@@ -28,40 +40,43 @@ label.module {
   padding-right: 0;
 }
 
-#custom-round-left-end{
+#custom-round-right-end,
+#custom-round-left-end {
   color: #FFFCF9;
   background: transparent;
   padding-left: 0;
   padding-right: 0;
 }
 
-/*-----module groups----*/
-/* .modules-right {
+#custom-nix-logo {
+  color: #007382;
+  background: #FFFCF9;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#workspaces button{
+  color: #007382;
   background-color: #FFFCF9;
-  padding-left: 8pt;
-  padding-right: 8pt;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
 }
 
-.modules-center {
-background-color: #FFFCF9;
-  margin: 2px 0 0 0;
-}
-
-.modules-left {
-  margin: 2px 0 0 5px;
-background-color: rgba(0,119,179,0.6);
-} */
-
-/*-----modules indv----*/
-#workspaces button {
-  padding: 1px 5px;
-  background-color: transparent;
-}
 #workspaces button:hover {
-  box-shadow: inherit;
-background-color: rgba(0,153,153,1);
+  border: 1px solid #D07364;
 }
 
 #workspaces button.focused {
-  background-color: rgba(0,43,51,0.85);
+  background-color: #D07364;
 }
+
+#taskbar {
+  background: transparent;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#taskbar button {
+  padding-right: 1em;
+}
+
