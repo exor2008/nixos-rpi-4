@@ -24,6 +24,7 @@
             "temperature"
             "keyboard-state"
             "sway/language"
+            "custom/round-left"
             "clock"
             "custom/power"
           ];
@@ -136,6 +137,11 @@
               hibernate = "systemctl hibernate";
             };
           };
+
+          "custom/round-left" = {
+            "format": " ",
+            "tooltip": false
+          },
 
         };
       };
