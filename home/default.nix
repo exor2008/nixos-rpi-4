@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ ... }:
 
 {
    imports = [ 
@@ -10,6 +10,7 @@
     ./swayidle.nix
     ./swaylock.nix
     ./icons.nix
+    ./wlogout
     ./sway
     ./waybar
   ];

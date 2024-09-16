@@ -6,6 +6,5 @@
     ripgrep
     dust
     wl-clipboard
-    wlogout
   ];
 }

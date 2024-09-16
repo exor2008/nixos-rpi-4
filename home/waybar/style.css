@@ -34,6 +34,18 @@ label.module {
   padding-right: 1.5em;
 }
 
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#pulseaudio:hover,
+#network:hover,
+#temperature:hover,
+#clock:hover,
+#custom-power:hover
+{
+  color: #D07364;
+}
+
 #custom-round-left {
   background: #FFFCF9;
   padding-left: 0;
@@ -63,7 +75,7 @@ label.module {
 }
 
 #workspaces button:hover {
-  border: 1px solid #D07364;
+  background-color: #D07364;
 }
 
 #workspaces button.focused {
