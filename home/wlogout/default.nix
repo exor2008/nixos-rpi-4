@@ -25,7 +25,7 @@
         }
         {
           label = "shutdown";
-          action = "shutdown";
+          action = "shutdown now";
           text = "Shutdown";
           keybind = "s";
         }
