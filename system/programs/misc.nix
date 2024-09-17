@@ -6,5 +6,7 @@
     ripgrep
     dust
     wl-clipboard
+    gcc
+    rustup
   ];
 }
