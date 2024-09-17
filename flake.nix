@@ -16,18 +16,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     wallpapers = {
       url = "github:exor2008/stardog";
       flake = false;
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager, nixvim, rust-overlay, wallpapers }:
+  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager, nixvim, wallpapers }:
     let
       inherit (nixpkgs.lib) nixosSystem;
     in {
@@ -50,11 +45,6 @@
                 inherit self wallpapers;
               };
             }
-
-            ({ pkgs, ... }: {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            })
           ];
         };
       };
