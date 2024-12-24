@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
  imports = [ 
@@ -12,5 +12,7 @@
     ./nnn.nix
     ./pipewire.nix
     ./misc.nix
+    ./agenix.nix
+    ./vpn.nix
   ];
 }

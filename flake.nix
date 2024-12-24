@@ -20,9 +20,14 @@
       url = "github:exor2008/stardog";
       flake = false;
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager, nixvim, wallpapers }:
+  outputs = inputs@{ self, nixpkgs, nixos-hardware, home-manager, nixvim, wallpapers, agenix }:
     let
       inherit (nixpkgs.lib) nixosSystem;
     in {
@@ -45,6 +50,8 @@
                 inherit self wallpapers;
               };
             }
+
+            agenix.nixosModules.default
           ];
         };
       };

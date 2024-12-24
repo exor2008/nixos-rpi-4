@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 {
  imports = [ 
@@ -11,6 +11,7 @@
     ./users.nix
     ./variables.nix
     ./font.nix
+    ./firewall.nix
     ./programs
   ];
 }

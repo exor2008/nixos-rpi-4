@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   users = {
@@ -6,7 +6,7 @@
     users.ian = {
       isNormalUser = true;
       shell = pkgs.nushell;
-      password = "zaq1";
+      hashedPasswordFile = config.age.secrets.passwd.path;
       extraGroups = [ "wheel" "render" "video" ];
     };
     groups.admins = {
