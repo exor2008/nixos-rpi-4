@@ -44,6 +44,10 @@
           publicKey = "3nGW7Eje6EKmE2LVsQsrD/7MZGFONuVjFNQZkZoR8iA=";
           allowedIPs = [ "10.0.0.5/32" "fdc9:281f:04d7:9ee9::5/128" ];
         }
+        { # babsveta
+          publicKey = "XX95xuzKxM0O3hJONqOywrnhogiPxsuvEXylrF713VE=";
+          allowedIPs = [ "10.0.0.6/32" "fdc9:281f:04d7:9ee9::6/128" ];
+        }
       ];
     };
   };
