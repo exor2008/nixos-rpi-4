@@ -16,5 +16,8 @@ in
     };
   };
   
-  services.openssh.enable = true;
+  services = {
+    vnstat.enable = true;
+    openssh.enable = true;
+  };
 }
