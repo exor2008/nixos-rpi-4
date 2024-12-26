@@ -48,6 +48,10 @@
           publicKey = "XX95xuzKxM0O3hJONqOywrnhogiPxsuvEXylrF713VE=";
           allowedIPs = [ "10.0.0.6/32" "fdc9:281f:04d7:9ee9::6/128" ];
         }
+        { # max
+          publicKey = "Co/jMfGAcib3RszXoAxZIwk3cIRBe0dQ+a1PBMn1O3U=";
+          allowedIPs = [ "10.0.0.7/32" "fdc9:281f:04d7:9ee9::7/128" ];
+        }
       ];
     };
   };
