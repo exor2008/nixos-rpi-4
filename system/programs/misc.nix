@@ -14,5 +14,9 @@
     nmap
     iftop
     qrencode
+    tui-journal
+    repgrep
+    serie
+    netscanner
   ];
 }

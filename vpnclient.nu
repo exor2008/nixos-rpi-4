@@ -16,7 +16,7 @@ DNS = 10.0.0.1
 
 [Peer]
 PublicKey = uQj7U0dDix8yJ0MDKTdAxbyuMaLr96S8kFzZzzXoJBc=
-Endpoint = 66.176.30.56:51820
+Endpoint = 66.176.30.56:42586
 AllowedIPs = 0.0.0.0/0
 " | save ($cfg_path)
 
