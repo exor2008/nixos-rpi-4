@@ -9,7 +9,7 @@
         name = "JetBrainsMono Nerd Font";
       };
       
-      theme = "Spacedust";
+      themeFile = "Spacedust";
       
       settings = {
         copy_on_select = "clipboard";

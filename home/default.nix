@@ -10,6 +10,7 @@
     ./swayidle.nix
     ./swaylock.nix
     ./icons.nix
+    ./vscode.nix
     ./wlogout
     ./sway
     ./waybar

@@ -18,5 +18,7 @@
     repgrep
     serie
     netscanner
+    tshark
+    brave
   ];
 }

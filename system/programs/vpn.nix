@@ -52,6 +52,14 @@
           publicKey = "Co/jMfGAcib3RszXoAxZIwk3cIRBe0dQ+a1PBMn1O3U=";
           allowedIPs = [ "10.0.0.7/32" "fdc9:281f:04d7:9ee9::7/128" ];
         }
+        { # armine
+          publicKey = "FtYrP4Mo6QrB/11XJWcm+EFJQYy6RjxEHDGuiIutHWQ=";
+          allowedIPs = [ "10.0.0.8/32" "fdc9:281f:04d7:9ee9::8/128" ];
+        }
+        { # maxmaman
+          publicKey = "SG+HRbdhx2eTa739uFmOa4zEy2tsT8SBFAmpvaHarHg=";
+          allowedIPs = [ "10.0.0.9/32" "fdc9:281f:04d7:9ee9::9/128" ];
+        }
       ];
     };
   };

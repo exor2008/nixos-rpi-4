@@ -5,5 +5,5 @@
     inputs.agenix.packages.${system}.default
   ];
 
-  age.secrets.passwd.file = /home/ian/secrets/passwd.age;
+  age.secrets.passwd.file = ../../secrets/passwd.age;
 }
