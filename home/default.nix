@@ -11,6 +11,7 @@
     ./swaylock.nix
     ./icons.nix
     ./vscode.nix
+    ./bat.nix
     ./wlogout
     ./sway
     ./waybar

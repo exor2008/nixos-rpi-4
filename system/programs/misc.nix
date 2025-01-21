@@ -10,7 +10,6 @@
     rustup
     dua
     bottom
-    bat
     nmap
     iftop
     qrencode
