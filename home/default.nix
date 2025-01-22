@@ -12,6 +12,7 @@
     ./icons.nix
     ./vscode.nix
     ./bat.nix
+    ./messengers.nix
     ./wlogout
     ./sway
     ./waybar
