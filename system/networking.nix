@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 
 let
-  SSID = "Bella1611";
-  SSIDpassword = "Miroslava0831";
   interface = "wlan0";
   hostname = "NixOS-RPI4";
 in
@@ -11,8 +9,11 @@ in
     hostName = hostname;
     wireless = {
       enable = true;
-      networks."${SSID}".psk = SSIDpassword;
+      networks = {
+        Bella1611.pskRaw = "ext:password";
+      };
       interfaces = [ interface ];
+      secretsFile = "/etc/nixos/secrets/wifi.conf";
     };
   };
   

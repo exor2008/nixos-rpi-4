@@ -19,5 +19,6 @@
     netscanner
     tshark
     brave
+    cbonsai
   ];
 }

@@ -13,6 +13,7 @@
     ./pipewire.nix
     ./misc.nix
     ./agenix.nix
-    ./vpn.nix
+    # ./vpn.nix
+    # ./xray.nix
   ];
 }
