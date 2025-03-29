@@ -14,6 +14,6 @@
     ./misc.nix
     ./agenix.nix
     # ./vpn.nix
-    # ./xray.nix
+    ./xray.nix
   ];
 }
