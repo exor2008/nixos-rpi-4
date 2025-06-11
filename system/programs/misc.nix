@@ -20,5 +20,10 @@
     tshark
     brave
     cbonsai
+
+    ## for the kenel modeules dev
+    # linux_rpi4.dev
+    # gnumake
+    # dtc
   ];
 }

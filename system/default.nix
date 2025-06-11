@@ -13,5 +13,6 @@
     ./font.nix
     ./firewall.nix
     ./programs
+    ./ili9486
   ];
 }
