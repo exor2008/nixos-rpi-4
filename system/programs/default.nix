@@ -2,7 +2,7 @@
 
 {
  imports = [ 
-    ./nixvim
+    ./nixvim.nix
     ./polkit.nix
     ./git.nix
     ./neofetch.nix

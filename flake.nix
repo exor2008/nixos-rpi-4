@@ -12,7 +12,7 @@
     };
 
     nixvim = {
-      url = "github:redyf/Neve";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -50,6 +50,8 @@
                 inherit self wallpapers;
               };
             }
+
+            nixvim.nixosModules.nixvim
 
             agenix.nixosModules.default
           ];
