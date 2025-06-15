@@ -2,7 +2,7 @@
 
 {
  imports = [ 
-    ./nixvim.nix
+    ./nixvim
     ./polkit.nix
     ./git.nix
     ./neofetch.nix
@@ -15,5 +15,6 @@
     ./agenix.nix
     # ./vpn.nix
     ./xray.nix
+    ./yazi.nix
   ];
 }

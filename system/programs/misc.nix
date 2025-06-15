@@ -20,6 +20,8 @@
     tshark
     brave
     cbonsai
+    fd
+    nixfmt-rfc-style
 
     ## for the kenel modeules dev
     # linux_rpi4.dev
