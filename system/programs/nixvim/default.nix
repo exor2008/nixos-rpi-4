@@ -26,6 +26,15 @@
         enable = true;
         settings.options.theme = "moonfly";
       };
+      crates.enable = true;
+      csvview.enable = true;
+      cursorline.enable = true;
+      glance.enable = true;
+      hex.enable = true;
+      lastplace.enable = true;
+      vim-surround.enable = true;
+      persistence.enable = true;
+      barbecue.enable = true;
     };
   };
 
@@ -36,5 +45,7 @@
     ./telescope.nix
     ./yazi.nix
     ./luasnip.nix
+    ./barbar.nix
+    ./dashboard.nix
   ];
 }

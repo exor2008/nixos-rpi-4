@@ -6,14 +6,14 @@
       lsp = {
         enable = true;
 
-	servers = {
-	  nil_ls.enable = true;
-	  rust_analyzer = {
-	    enable = true;
+        servers = {
+          nil_ls.enable = true;
+          rust_analyzer = {
+            enable = true;
             installCargo = true;
             installRustc = true;
             installRustfmt = true;
-	    settings = {
+            settings = {
               checkOnSave = true;
               check = {
                 command = "clippy";
@@ -23,10 +23,10 @@
               };
             };
           };
-	  pylsp.enable = true;
-	};
+          pylsp.enable = true;
+        };
 
-	keymaps = {
+        keymaps = {
           silent = true;
           lspBuf = {
             gd = {

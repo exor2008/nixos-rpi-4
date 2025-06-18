@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   hardware = {
@@ -54,7 +59,7 @@
     };
   };
 
-  users.groups.spi = {};
+  users.groups.spi = { };
 
   services.udev.extraRules = ''
     SUBSYSTEM=="spidev", KERNEL=="spidev0.0", GROUP="spi", MODE="0660"
