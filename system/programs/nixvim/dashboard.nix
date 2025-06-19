@@ -58,6 +58,13 @@
                 key_format = "	%s";
               }
               {
+                action = "Yazi";
+                desc = "File Manager";
+                icon = " ";
+                key = "y";
+                key_format = "	%s";
+              }
+              {
                 action = "qa";
                 desc = "Quit Neovim";
                 icon = " ";

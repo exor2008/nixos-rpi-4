@@ -10,9 +10,8 @@
           nil_ls.enable = true;
           rust_analyzer = {
             enable = true;
-            installCargo = true;
-            installRustc = true;
-            installRustfmt = true;
+            installRustc = false;
+            installCargo = false;
             settings = {
               checkOnSave = true;
               check = {

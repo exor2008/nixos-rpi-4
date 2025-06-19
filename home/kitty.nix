@@ -1,21 +1,22 @@
-{ wallpapers, ...  }:
+{ wallpapers, ... }:
 
 {
   programs = {
     kitty = {
       enable = true;
-      
+
       font = {
         name = "JetBrainsMono Nerd Font";
       };
-      
+
       themeFile = "Spacedust";
-      
+
       settings = {
         copy_on_select = "clipboard";
         background = "#152528";
         window_logo_path = "${wallpapers}/window-logo.png";
         window_logo_alpha = "0.4";
+        window_logo_position = "center";
       };
 
       keybindings = {
@@ -23,6 +24,8 @@
         "cmd+v" = "paste_from_clipboard";
         "shift+cmd+v" = "paste_from_buffer clipboard";
       };
+
+      enableGitIntegration = true;
     };
   };
 }

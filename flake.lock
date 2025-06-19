@@ -289,11 +289,11 @@
     "wallpapers": {
       "flake": false,
       "locked": {
-        "lastModified": 1749080878,
-        "narHash": "sha256-MSMKVr+9jx2Zw957viHKHCy8VgCgasIhV1VAUadDQkY=",
+        "lastModified": 1750295625,
+        "narHash": "sha256-FrEPBfXDQGaYdDuq22FJnHl0R5pqEdCAjeegUf8xd0c=",
         "owner": "exor2008",
         "repo": "stardog",
-        "rev": "025640df3704d6ab6822307f3b9641e8b4f8e56d",
+        "rev": "900088bd56c56d356b23347bd4c3174d11a46312",
         "type": "github"
       },
       "original": {

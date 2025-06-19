@@ -1,7 +1,7 @@
 { ... }:
 
 {
-   imports = [ 
+  imports = [
     ./nushell.nix
     ./home-manager.nix
     ./git.nix
@@ -16,6 +16,7 @@
     ./wlogout
     ./sway
     ./waybar
+    ./starship
   ];
 
   home.stateVersion = "24.05";

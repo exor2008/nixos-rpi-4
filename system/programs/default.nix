@@ -1,7 +1,7 @@
 { ... }:
 
 {
- imports = [ 
+  imports = [
     ./nixvim
     ./polkit.nix
     ./git.nix
