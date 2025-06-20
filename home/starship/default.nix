@@ -7,7 +7,7 @@
 
       enableNushellIntegration = true;
 
-      settings = (with builtins; fromTOML (readFile ./gruvbox-rainbow.toml));
+      settings = (with builtins; fromTOML (readFile ./clouds.toml));
     };
   };
 }
