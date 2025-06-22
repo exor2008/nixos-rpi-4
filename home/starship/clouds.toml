@@ -28,7 +28,7 @@ palette = 'clouds'
 
 [palettes.clouds]
 color_fg = '#007382'
-color_bg = '#FFFCF9'
+color_bg = '#CCC9C7'
 color_red = '#E77382'
 
 [os]

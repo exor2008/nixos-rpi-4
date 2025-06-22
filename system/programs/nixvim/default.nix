@@ -47,5 +47,6 @@
     ./luasnip.nix
     ./barbar.nix
     ./dashboard.nix
+    ./dap.nix
   ];
 }
