@@ -7,10 +7,20 @@
       isNormalUser = true;
       shell = pkgs.nushell;
       hashedPasswordFile = config.age.secrets.passwd.path;
-      extraGroups = [ "wheel" "render" "video" ];
+      extraGroups = [
+        "wheel"
+        "render"
+        "video"
+        "plugdev"
+      ];
     };
-    groups.admins = {
-      members = [ "root" "ian" ];
+    groups = {
+      admins = {
+        members = [
+          "root"
+          "ian"
+        ];
+      };
     };
   };
 }

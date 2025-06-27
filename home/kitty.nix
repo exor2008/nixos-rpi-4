@@ -15,7 +15,7 @@
         copy_on_select = "clipboard";
         background = "#152528";
         window_logo_path = "${wallpapers}/window-logo.png";
-        window_logo_alpha = "0.4";
+        window_logo_alpha = "0.05";
         window_logo_position = "center";
       };
 

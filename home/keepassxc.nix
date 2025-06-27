@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+  programs = {
+    keepassxc = {
+      enable = true;
+    };
+  };
+}

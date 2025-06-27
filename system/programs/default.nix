@@ -16,5 +16,6 @@
     # ./vpn.nix
     ./xray.nix
     ./yazi.nix
+    ./probe-rs
   ];
 }
