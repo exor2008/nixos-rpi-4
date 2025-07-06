@@ -1,13 +1,20 @@
-
 { ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.trusted-users = ["root" "ian"];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [
+      "root"
+      "ian"
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
 
-  imports = [ 
+  imports = [
     ./cachix.nix
     ./hardware-configuration.nix
     ./system

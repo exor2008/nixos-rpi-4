@@ -83,6 +83,7 @@ disabled = false
 style = "fg:color_fg bg:color_bg"
 show_milliseconds = true
 format = "[ 󱎫 $duration ]($style)"
+min_time = 1
 
 [nodejs]
 symbol = ""

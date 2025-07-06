@@ -8,21 +8,7 @@
 
         servers = {
           nil_ls.enable = true;
-          # rust_analyzer = {
-          #   enable = true;
-          #   installRustc = false;
-          #   installCargo = false;
-          #   settings = {
-          #     checkOnSave = true;
-          #     check = {
-          #       command = "clippy";
-          #     };
-          #     procMacro = {
-          #       enable = true;
-          #     };
-          #   };
-          # };
-          pylsp.enable = true;
+          pyright.enable = true;
         };
 
         keymaps = {

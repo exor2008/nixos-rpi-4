@@ -17,5 +17,6 @@
     ./xray.nix
     ./yazi.nix
     ./probe-rs
+    ./python.nix
   ];
 }
