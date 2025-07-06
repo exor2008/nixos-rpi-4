@@ -46,10 +46,10 @@
               action = "rename";
               desc = "Rename";
             };
-            "<leader>ca" = {
-              action = "code_action";
-              desc = "Code Action";
-            };
+            # "<leader>ca" = { # replaced by action previews
+            #   action = "code_action";
+            #   desc = "Code Action";
+            # };
             "<C-k>" = {
               action = "signature_help";
               desc = "Signature Help";

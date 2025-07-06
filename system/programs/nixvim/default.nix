@@ -35,6 +35,8 @@
       vim-surround.enable = true;
       persistence.enable = true;
       barbecue.enable = true;
+      web-devicons.enable = true;
+      fidget.enable = true;
     };
   };
 
@@ -48,5 +50,7 @@
     ./barbar.nix
     ./dashboard.nix
     ./dap.nix
+    ./actions-preview.nix
+    ./aerial.nix
   ];
 }
