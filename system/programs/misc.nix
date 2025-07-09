@@ -22,6 +22,7 @@
     cbonsai
     fd
     nixfmt-rfc-style
+    usbutils
 
     ## for the kenel modeules dev
     # linux_rpi4.dev

@@ -15,6 +15,7 @@
       ];
     };
     groups = {
+      plugdev = { };
       admins = {
         members = [
           "root"

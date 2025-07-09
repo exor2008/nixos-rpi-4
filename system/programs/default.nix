@@ -18,5 +18,6 @@
     ./yazi.nix
     ./probe-rs
     ./python.nix
+    ./automoutns.nix
   ];
 }
