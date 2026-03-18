@@ -8,7 +8,7 @@
     ./greetd.nix
     # ./lf.nix
     # ./mc.nix
-    ./nnn.nix
+    # ./nnn.nix
     ./pipewire.nix
     ./misc.nix
     ./agenix.nix
