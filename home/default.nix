@@ -10,14 +10,15 @@
     ./swayidle.nix
     ./swaylock.nix
     ./icons.nix
-    ./vscode.nix
+    # ./vscode.nix
     ./bat.nix
-    ./messengers.nix
+    # ./messengers.nix
     ./wlogout
     ./sway
     ./waybar
     ./starship
-    ./keepassxc.nix
+    # ./keepassxc.nix
+    # ./zellij.nix
   ];
 
   home.stateVersion = "24.05";

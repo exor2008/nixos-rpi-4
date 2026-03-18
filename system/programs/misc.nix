@@ -6,23 +6,24 @@
     ripgrep
     dust
     wl-clipboard
-    gcc
-    rustup
+    # gcc
+    # rustup
     dua
     bottom
-    nmap
-    iftop
-    qrencode
-    tui-journal
+    # nmap
+    # iftop
+    # qrencode
+    # tui-journal
     repgrep
     serie
-    netscanner
-    tshark
-    brave
+    # netscanner
+    # tshark
+    # brave
     cbonsai
     fd
-    nixfmt-rfc-style
+    nixfmt
     usbutils
+    fastfetch
 
     ## for the kenel modeules dev
     # linux_rpi4.dev

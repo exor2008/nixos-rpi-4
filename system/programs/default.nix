@@ -5,10 +5,9 @@
     ./nixvim
     ./polkit.nix
     ./git.nix
-    ./neofetch.nix
     ./greetd.nix
-    ./lf.nix
-    ./mc.nix
+    # ./lf.nix
+    # ./mc.nix
     ./nnn.nix
     ./pipewire.nix
     ./misc.nix
@@ -16,8 +15,8 @@
     # ./vpn.nix
     ./xray.nix
     ./yazi.nix
-    ./probe-rs
-    ./python.nix
+    # ./probe-rs
+    # ./python.nix
     ./automoutns.nix
   ];
 }

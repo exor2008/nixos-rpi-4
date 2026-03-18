@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    probe-rs
+    probe-rs-tools
     elf2uf2-rs
   ];
 

@@ -1,11 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   programs = {
     git = {
       enable = true;
-      userEmail = "exorsteam2008@gmail.com";
-      userName = "exor2008";
+      settings.user.mail = "exorsteam2008@gmail.com";
+      settings.user.name = "exor2008";
     };
   };
 }
+

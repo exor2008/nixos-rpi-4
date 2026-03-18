@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.agenix.packages.${system}.default
+    inputs.agenix.packages.${stdenv.hostPlatform.system}.default
   ];
 
   age.secrets.passwd.file = ../../secrets/passwd.age;

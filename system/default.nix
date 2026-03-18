@@ -1,7 +1,7 @@
 { ... }:
 
 {
- imports = [ 
+  imports = [
     ./boot.nix
     ./file-system.nix
     ./networking.nix
@@ -13,6 +13,6 @@
     ./font.nix
     ./firewall.nix
     ./programs
-    ./ili9486
+    # ./ili9486
   ];
 }

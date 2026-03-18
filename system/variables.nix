@@ -2,6 +2,10 @@
 
 {
   environment = {
+    pathsToLink = [
+      "/share/applications"
+      "/share/xdg-desktop-portal"
+    ];
     localBinInPath = true;
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
