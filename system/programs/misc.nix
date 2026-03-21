@@ -18,7 +18,7 @@
     serie
     # netscanner
     # tshark
-    # brave
+    brave
     cbonsai
     fd
     nixfmt

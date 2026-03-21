@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   interface = "wlan0";
@@ -13,10 +18,10 @@ in
         Bella1611.pskRaw = "ext:password";
       };
       interfaces = [ interface ];
-      secretsFile = "/etc/nixos/secrets/wifi.conf";
+      secretsFile = "/etc/nixos/wifi.conf";
     };
   };
-  
+
   services = {
     vnstat.enable = true;
     openssh.enable = true;

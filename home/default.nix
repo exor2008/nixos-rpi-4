@@ -18,7 +18,7 @@
     ./waybar
     ./starship
     # ./keepassxc.nix
-    # ./zellij.nix
+    ./zellij.nix
   ];
 
   home.stateVersion = "24.05";
