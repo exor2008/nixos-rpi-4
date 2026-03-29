@@ -19,6 +19,8 @@
     ./starship
     # ./keepassxc.nix
     ./zellij.nix
+    ./firefox.nix
+    ./pentest.nix
   ];
 
   home.stateVersion = "24.05";
