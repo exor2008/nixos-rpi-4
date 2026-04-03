@@ -17,7 +17,7 @@
     ./sway
     ./waybar
     ./starship
-    # ./keepassxc.nix
+    ./keepassxc.nix
     ./zellij.nix
     ./firefox.nix
     ./pentest.nix
