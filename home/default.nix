@@ -21,6 +21,7 @@
     ./zellij.nix
     ./firefox.nix
     ./pentest.nix
+    ./chrome.nix
   ];
 
   home.stateVersion = "24.05";
