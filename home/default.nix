@@ -22,6 +22,7 @@
     ./firefox.nix
     ./pentest.nix
     ./chrome.nix
+    ./crypto.nix
   ];
 
   home.stateVersion = "24.05";

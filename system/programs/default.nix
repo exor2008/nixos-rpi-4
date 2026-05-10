@@ -16,8 +16,9 @@
     ./xray.nix
     ./yazi.nix
     # ./probe-rs
-    # ./python.nix
+    ./python.nix
     ./automoutns.nix
     ./tor.nix
+    ./re.nix
   ];
 }
