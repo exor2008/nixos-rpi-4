@@ -6,6 +6,7 @@
     black
     isort
     mypy
+    poetry
   ];
 
   programs.nix-ld.enable = true;

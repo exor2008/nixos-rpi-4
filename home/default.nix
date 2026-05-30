@@ -22,7 +22,10 @@
     ./firefox.nix
     ./pentest.nix
     ./chrome.nix
-    ./crypto.nix
+    ./tox.nix
+    ./electrum.nix
+    ./zed.nix
+    ./screenshot.nix
   ];
 
   home.stateVersion = "24.05";
