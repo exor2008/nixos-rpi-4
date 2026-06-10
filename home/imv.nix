@@ -1,0 +1,11 @@
+{
+  ...
+}:
+
+{
+  programs = {
+    imv = {
+      enable = true;
+    };
+  };
+}

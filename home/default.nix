@@ -26,6 +26,8 @@
     ./electrum.nix
     ./zed.nix
     ./screenshot.nix
+    ./imv.nix
+    ./pinta.nix
   ];
 
   home.stateVersion = "24.05";
